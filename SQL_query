@@ -1,0 +1,5 @@
+SELECT maintable_67HRF.GroupID, maintable_67HRF.FirstName, maintable_67HRF.LastName,
+maintable_67HRF.Job, maintable_67HRF.ExternalID, cb_vendorinformation.CompanyName, count(FirstName) as Count FROM maintable_67HRF, cb_vendorinformation
+WHERE maintable_67HRF.GroupID = cb_vendorinformation.GroupID
+GROUP BY FirstName
+ORDER BY Count ASC, cb_vendorinformation.CompanyName ASC
